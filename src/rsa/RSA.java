@@ -49,10 +49,8 @@ public class RSA {
     }
     
     public String decrypt(ArrayList<BigInteger> c) {
+
         StringBuilder sb = new StringBuilder();
-        
-        System.out.println("public key:" + publicKey.getFirst() + "  " + publicKey.getSecond());
-        System.out.println("Private key:" + privateKey.getFirst() + "  " + privateKey.getSecond());
         for(BigInteger ci: c){
             sb.append(ci.modPow(privateKey.getFirst(), privateKey.getSecond()));
         }
